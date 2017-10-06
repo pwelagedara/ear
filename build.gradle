@@ -1,0 +1,15 @@
+apply plugin: 'ear'
+
+repositories {
+    mavenCentral()
+}
+
+ear {
+    archiveName = "websphere.ear"
+}
+
+dependencies {
+    deploy project(path: ':java6', configuration: 'archives')
+
+    earlib group: 'log4j', name: 'log4j', version: '1.2.15', ext: 'jar'
+}
